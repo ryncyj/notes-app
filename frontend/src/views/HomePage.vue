@@ -20,7 +20,7 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import NotesList from '../components/NoteList.vue'
-import ConfirmModal from '../components/confirmModal.vue'
+import ConfirmModal from '../components/ConfirmModal.vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
