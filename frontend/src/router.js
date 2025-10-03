@@ -5,12 +5,12 @@ import NotePage from './views/NotePage.vue'
 const routes = [
   { path: '/', component: HomePage },
   { path: '/note/:id?', component: NotePage, props: true }, // dynamic route
-  { path: '/:pathMatch(.*)*',  redirect: '/' } // catch-all
+  { path: '/:pathMatch(.*)*', redirect: '/' }, // catch-all
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes,
 })
 
-export default router;
+export default router
