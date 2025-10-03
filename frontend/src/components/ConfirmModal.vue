@@ -1,0 +1,37 @@
+<template>
+    <transition enter-active-class="transition-opacity duration-300" enter-from-class="opacity-0"
+        enter-to-class="opacity-100" leave-active-class="transition-opacity duration-300" leave-from-class="opacity-100"
+        leave-to-class="opacity-0">
+        <div v-if="isOpen" class="fixed inset-0 flex items-center justify-center z-50"
+            style="background-color: rgba(0,0,0,0.3);">
+            <transition enter-active-class="transition transform duration-300" enter-from-class="opacity-0 scale-95"
+                enter-to-class="opacity-100 scale-100" leave-active-class="transition transform duration-300"
+                leave-from-class="opacity-100 scale-100" leave-to-class="opacity-0 scale-95">
+                <div v-if="isOpen" class="bg-white rounded-lg shadow-lg w-96 p-6">
+                    <h2 class="text-xl font-semibold mb-4">{{ title }}</h2>
+                    <p class="mb-6">{{ message }}</p>
+                    <div class="flex justify-end space-x-3">
+                        <button @click="onCancel" class="px-3 py-1 bg-gray-300 text-black rounded hover:bg-gray-400 rounded shadow hover:shadow-lg hover:scale-105 transition-all duration-200">
+                            Cancel
+                        </button>
+                        <button @click="onConfirm" class="px-3 py-1 bg-red-500 text-white rounded shadow hover:shadow-lg hover:scale-105 transition-all duration-200">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </transition>
+        </div>
+    </transition>
+</template>
+
+<script setup>
+import { defineProps } from 'vue'
+
+const { isOpen, title, message, onConfirm, onCancel } = defineProps({
+    isOpen: Boolean,
+    title: { type: String, default: 'Confirm' },
+    message: { type: String, default: 'Are you sure?' },
+    onConfirm: Function,
+    onCancel: Function
+})
+</script>
