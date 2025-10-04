@@ -17,7 +17,7 @@
   import { ref, watch, defineProps, defineEmits } from 'vue'
 
   const props = defineProps({
-    note: Object, // optional, for editing
+    note: Object,
   })
 
   const emit = defineEmits(['save', 'cancel'])
