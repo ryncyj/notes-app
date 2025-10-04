@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full min-h-screen p-6 bg-[#f7f6fc]">
+  <div class="w-full min-h-screen p-6 bg-[#F6F6F6]">
     <div class="max-w-6xl mx-auto">
       <h1 class="text-3xl font-bold mb-6 text-center">My Notes</h1>
       <div class="w-full flex justify-end mb-4">
