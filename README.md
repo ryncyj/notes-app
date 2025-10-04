@@ -3,11 +3,28 @@
 A simple note-taking application. Users can create, edit, and delete notes with a responsive interface.
 
 
+## **Running locally**
+- clone the project
+- `cd` into the project root
+
+#### Running frontend
+- from the project root `cd frontend`
+- run `npm install`
+- run `npm run dev`
+
+#### Running backend
+- from the project root `cd backend`
+- run `npm install`
+- run `npm run dev`
+
+#### Note
+No .env file is required. The app will automatically connect as long as the frontend runs on http://localhost:5173 and the backend runs on http://localhost:5000.
+
+
 ## **Tech Stack**
 
-- **Backend:** Express.js, SQLite  
+- **Backend:** Node.js with Express, SQLite  
 - **Frontend:** Vue.js, Vue Router, TailwindCSS  
-
 
 ## **Features**
 
