@@ -15,7 +15,7 @@ A simple note-taking application. Users can create, edit, and delete notes with 
 #### Running backend
 - from the project root `cd backend`
 - run `npm install`
-- run `npm run dev`
+- run `npm start` or `npm run dev`
 
 #### Note
 No .env file is required. The app will automatically connect as long as the frontend runs on http://localhost:5173 and the backend runs on http://localhost:5000.
@@ -78,7 +78,7 @@ Output:
 </template>
 ```
 Problem: 
-- When modal was opened, the surrounding is completely black
+- When modal was opened, the surrounding is completely black.
 - the transition from current screen to modal was instant which wasn't very nice.  
 - Size of the modal wasn't ideal for small mobile screen size.
 
@@ -149,7 +149,7 @@ Problem:
 
 What I changed:
 - Use 12 hour format instead.
-- Changed line 3 to `const date = new Date(dateString + 'Z')`
+- Changed line 3 to `const date = new Date(dateString + 'Z')`.
 
 Why:
 - Changed to 12 hour format due to preference and its generally easier to understand.
