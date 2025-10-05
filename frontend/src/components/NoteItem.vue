@@ -27,10 +27,10 @@
 <script setup>
   const formatDate = (dateString) => {
     if (!dateString) return ''
-    
+
     // make sure date is interpreted as UTC for correct conversion to local time
     const date = new Date(dateString + 'Z')
-    
+
     return date.toLocaleString('en-GB', {
       day: '2-digit',
       month: 'short',
