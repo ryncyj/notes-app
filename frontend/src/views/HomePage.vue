@@ -24,7 +24,13 @@
       title="Confirm Delete"
       message="Are you sure you want to delete this note?"
       :onConfirm="() => deleteNote(deleteId)"
-      :onCancel="() => (modalOpen = false)"
+      :onCancel="
+        () => {
+          modalOpen = false
+          modalError = ''
+        }
+      "
+      :errorMessage="modalError"
     />
   </div>
 </template>
@@ -41,6 +47,7 @@
   const notes = ref([])
 
   const errorMessage = ref('')
+  const modalError = ref('')
 
   // Modal state
   const modalOpen = ref(false)
@@ -85,7 +92,7 @@
       fetchNotes()
     } catch (err) {
       console.error(err)
-      alert('Failed to delete note')
+      modalError.value = 'Failed to delete note. Please try again.'
     }
   }
 

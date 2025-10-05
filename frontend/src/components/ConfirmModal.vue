@@ -22,18 +22,21 @@
         >
           <h2 class="text-xl font-semibold mb-4">{{ title }}</h2>
           <p class="mb-6">{{ message }}</p>
+          <p v-if="errorMessage" class="text-red-500 text-sm mb-2">{{ errorMessage }}</p>
           <div class="flex justify-end space-x-3">
             <button
               @click="onCancel"
-              class="px-3 py-1 bg-gray-300 text-black rounded shadow hover:shadow-lg hover:scale-105 transition-all duration-200"
+              :disabled="isLoading"
+              class="px-3 py-1 bg-gray-300 text-black rounded shadow hover:shadow-lg hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Cancel
             </button>
             <button
-              @click="onConfirm"
-              class="px-3 py-1 bg-red-500 text-white rounded shadow hover:shadow-lg hover:scale-105 transition-all duration-200"
+              @click="handleConfirm"
+              :disabled="isLoading"
+              class="px-3 py-1 bg-red-500 text-white rounded shadow hover:shadow-lg hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Delete
+              {{ isLoading ? 'Deleting...' : 'delete' }}
             </button>
           </div>
         </div>
@@ -43,13 +46,27 @@
 </template>
 
 <script setup>
-  import { defineProps } from 'vue'
+  import { ref } from 'vue'
 
-  const { isOpen, title, message, onConfirm, onCancel } = defineProps({
+  const props = defineProps({
     isOpen: Boolean,
     title: { type: String, default: 'Confirm' },
     message: { type: String, default: 'Are you sure?' },
     onConfirm: Function,
     onCancel: Function,
+    errorMessage: { type: String, default: '' },
   })
+
+  const isLoading = ref(false)
+
+  const handleConfirm = async () => {
+    if (props.onConfirm) {
+      try {
+        isLoading.value = true
+        await props.onConfirm()
+      } finally {
+        isLoading.value = false
+      }
+    }
+  }
 </script>
