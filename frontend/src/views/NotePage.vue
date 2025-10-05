@@ -74,10 +74,18 @@
 
   onMounted(async () => {
     if (!isNewNote.value) {
-      const res = await fetch(`${API_URL}/note/${noteId}`)
-      const data = await res.json()
-      note.title = data.title
-      note.content = data.content
+      try {
+        const res = await fetch(`${API_URL}/note/${noteId}`)
+        if (!res.ok) throw new Error(`Failed to fetch note (${res.status})`)
+
+        const data = await res.json()
+        note.title = data.title
+        note.content = data.content
+      } catch (err) {
+        console.error('Error loading note:', err)
+        alert('Failed to load note. Returning to homepage.')
+        router.push('/')
+      }
     }
   })
 
