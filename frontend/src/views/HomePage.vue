@@ -85,6 +85,7 @@
   // Delete note
   const deleteNote = async (id) => {
     try {
+      modalError.value = ''
       const res = await fetch(`${API_URL}/note/${id}`, { method: 'DELETE' })
       if (!res.ok) throw new Error('Failed to delete note')
       modalOpen.value = false

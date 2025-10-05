@@ -39,7 +39,7 @@
         {{ isSaving ? 'Saving...' : 'Save' }}
       </button>
       <!-- Error message -->
-      <span v-if="errorMessage" class="text-red-500 text-sm mt-1 sm:mt-0 sm:ml-2">
+      <span v-if="errorMessage" class="text-red-500 text-sm mt-1 sm:mt-0 sm:ml-2 px-4">
         {{ errorMessage }}
       </span>
     </div>
