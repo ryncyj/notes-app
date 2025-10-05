@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full min-h-screen p-6 bg-[#F6F6F6]">
-    <div class="max-w-6xl mx-auto">
-      <h1 class="text-3xl font-bold mb-6 text-center">My Notes</h1>
+  <div class="w-full min-h-screen bg-[#F6F6F6]">
+    <h1 class="text-4xl font-bold text-center bg-white py-4 shadow-md">My Notes</h1>
+    <div class="max-w-6xl mx-auto p-5">
       <div class="w-full flex justify-end mb-4">
         <button @click="addNote"
           class="mb-4 px-4 py-2 bg-white text-black rounded shadow hover:shadow-lg transition-shadow">

@@ -12,7 +12,7 @@
 
       <!-- Title input -->
       <input v-model="note.title" placeholder="Enter Title"
-        class="flex-1 min-w-[100px] text-2xl font-bold bg-transparent border-none focus:outline-none focus:ring-0 my-1 sm:my-0" />
+        class="flex-1 min-w-[100px] text-4xl font-bold bg-transparent border-none focus:outline-none focus:ring-0 my-1 sm:my-0" />
 
       <!-- Save button -->
       <button :disabled="!canSave || isSaving" @click="save"

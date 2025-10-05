@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
 @import 'tailwindcss';
 
 html, body, #app {
+  font-family: "Caveat Brush", cursive;
   height: 100%;
 }
