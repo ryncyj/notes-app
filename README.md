@@ -43,7 +43,7 @@ No .env file is required. The app will automatically connect as long as the fron
 
 ## **Limitations**
 
-- **Cold start delay:** On Render’s free tier, the backend may take up to a minute to start if inactive.
+- **Cold start delay:** On Render’s free tier, the backend may take up to a minute to start if inactive (or just not work at all).
 - **No user separation:** All notes are visible to everyone as there is currently so user separation. 
 - **Database persistence:** Notes will be lost if the Render backend becomes inactive or restarts, as there is no persistent storage for render's free tier.
 
